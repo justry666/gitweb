@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>用户注册</title>
+	<div id="app">		
+		<form action="#" method="post" class="form">
+			用户名：　<input type="text" name="username" id="username" onblur="user"/><span id="tipuser"></span><br>
+			邮　箱：　<input type="text" name="email" id="email" onblur="email"/><span id="tipemail"></span><br>	
+			密　码：　<input type="text" name="password" id="password" onblur="pass"/><span id="tippass"></span><br>
+			确认密码：<input type="text" name="checkpas" id="checkpas" onblur="checkpass"/><span id="tipcheckpass"></span><br>
+			<input type="submit" value="注册" style="float: left;margin: 10px;"/>
+			<input type="reset" value="重置" style="float: right;margin: 10px;"/>
+		</form>
+	</div>
+		<script type="text/javascript">
+            // function checkAll(){//验证表单中所有的项
+            //     return checkUser()&&checkMail();//所有的方法都返回true，这个方法才返回true
+            // }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // function checkUser(){//验证用户名
+				// var usertip = document.getElementById("tipuser");//获取username的span标签			
+				// var user=document.getElementById("username")//获取用户名
+				// var username=user.value;
+				// user.onblur=function(){//给用户名文本框绑定blur事件
+				// 	var username=user.value;				
+				// 	var username=username.trim();//去除前后空白				
+				// 	if(username!==""){//判断用户名是否为空
+				// 		if(user.value.length<3||user.value.length>14){//继续判断长度[3-14]
+				// 			usertip.style.color="red";
+				// 			usertip.innerText="用户名长度必须要在[3~14]位之间!";//用户名长度非法
+				// 		}else{//继续判断是否含有特殊符号
+				// 			var regExp=/^[A-Za-z0-9]+$/;//使用正则表达式
+				// 			var ok=regExp.test(username);
+				// 			if(ok){
+				// 				usertip.style.color="green";
+				// 				usertip.innerText="√";
+				// 			}else{//用户名有特殊符号
+				// 				usertip.style.color="red";
+				// 				usertip.innerText="用户名只能由数字和字母组成！";
+				// 			}
+				// 		}
+				// 	}else{//username为空
+				// 		usertip.style.color="red";
+				// 		usertip.innerText="用户名不能为空！";
+				// 	}
+				// }
+				// user.onfocus =function(){//给username获取焦点函数
+				// 	var user=document.getElementById("username")//获取用户名
+				// 	var username=user.value;
+				// 	if(usertip.innerText!=""){
+				// 		user.value="";
+				// 	}
+				// 	usertip.innerText="";//清空span
+				// }
+			// }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // function checkMail(){//验证用户名
+				// var mailtip = document.getElementById("tipemail");//获取username的span标签			
+				// var mail=document.getElementById("email")//获取用户名
+				// var email=mail.value;
+				// mail.onblur=function(){//给邮箱文本框绑定blur事件
+				// 	var email=mail.value;				
+				// 	var email=email.trim();//去除前后空白				
+				// 	if(email!==""){//判断邮箱是否为空
+				// 		if(mail.value.length<3||mail.value.length>14){//继续判断长度[3-14]
+				// 			mailtip.style.color="red";
+				// 			mailtip.innerText="用户名长度必须要在[3~14]位之间!";//用户名长度非法
+				// 		}else{//继续判断是否含有特殊符号
+				// 			var regExp=/^[A-Za-z0-9]+$/;//使用正则表达式
+				// 			var ok=regExp.test(email);
+				// 			if(ok){
+				// 				mailtip.style.color="green";
+				// 				mailtip.innerText="√";
+				// 			}else{//用户名有特殊符号
+				// 				mailtip.style.color="red";
+				// 				mailtip.innerText="用户名只能由数字和字母组成！";
+				// 			}
+				// 		}
+				// 	}else{//邮箱为空
+				// 		mailtip.style.color="red";
+				// 		mailtip.innerText="邮箱不能为空！";
+				// 	}
+				// }
+				// mail.onfocus =function(){
+				// 	var mail=document.getElementById("email")
+				// 	var email=mail.value;
+				// 	if(mailtip.innerText!=""){
+				// 		mail.value="";
+				// 	}
+				// 	mailtip.innerText="";//清空span
+				// }
+			// }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			function check(name,span_id){
+				console.log(1);
+				var span_tip=document.getElementById(span_id);//获取itemname的span标签			
+				var item=document.getElementById(name)//获取用户名
+				var itemname=item.value;
+				item.onblur=function(){//给用户名文本框绑定blur事件
+					var itemname=item.value;				
+					var itemname=itemname.trim();//去除前后空白				
+					if(itemname!==""){//判断用户名是否为空
+						console.log(2);
+						if(item.value.length<3||item.value.length>14){//继续判断长度[3-14]
+							console.log(3);
+							itemtip.style.color="red";
+							itemtip.innerText="用户名长度必须要在[3~14]位之间!";//用户名长度非法
+						}else{//继续判断是否含有特殊符号
+							var regExp=/^[A-Za-z0-9]+$/;//使用正则表达式
+							var ok=regExp.test(itemname);
+							if(ok){
+								console.log(4);
+								itemtip.style.color="green";
+								itemtip.innerText="√";
+							}else{//用户名有特殊符号
+								itemtip.style.color="red";
+								itemtip.innerText="用户名只能由数字和字母组成！";
+							}
+						}
+					}else{//itemname为空
+						itemtip.style.color="red";
+						itemtip.innerText="用户名不能为空！";
+					}
+				}
+				item.onfocus =function(){//给itemname获取焦点函数
+					var item=document.getElementById("itemname")//获取用户名
+					var itemname=item.value;
+					if(itemtip.innerText!=""){
+						item.value="";
+					}
+					itemtip.innerText="";//清空span
+				}
+			}
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			check("tipuser","username");
+// 			check("tippass","password");
+// 			check("tipemail","email");
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
