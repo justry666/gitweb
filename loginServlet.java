@@ -3,7 +3,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 @WebServlet(name="loginServlet",urlPatterns="/loginServlet")
-public class loginServlet extends HttpServlet{
+    public class loginServlet extends HttpServlet{
+    @Override
     public void doGet(HttpServletRequest request,HttpServletResponse response)
     throws ServletException,IOException{
         response.setContentType("text/html;charset=utf-8");
@@ -13,6 +14,7 @@ public class loginServlet extends HttpServlet{
             response.sendRedirect("/welcome.html");//判断后重定向
         else response.sendRedirect("/login.html");
     }
+    @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response)
     throws ServletException,IOException{
         doGet(request,response);
