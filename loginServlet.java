@@ -12,8 +12,8 @@ import javax.servlet.http.*;
         String username=request.getParameter("username");//获取用户名密码
         String password=request.getParameter("password");
         if(("admin").equals(username)&&("123").equals(password))//假定数据
-            response.sendRedirect("/web1/welcome.html");//判断后重定向
-        else response.sendRedirect("/web1/login.html");
+            response.sendRedirect("/gitweb/welcome.html");//判断后重定向
+        else response.sendRedirect("/gitweb/login.html");
     }
     @Override
     public void doPost(HttpServletRequest request,HttpServletResponse response)
